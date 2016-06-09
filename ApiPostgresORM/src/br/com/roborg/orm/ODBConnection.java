@@ -29,7 +29,10 @@ public class ODBConnection {
 	private Connection db;
 	
 	private ODBConnection() throws ClassNotFoundException, SQLException {
-		if (cfg == null) cfg = new Config("localhost", 5432, "socialpark", "postgres", "142536");
+		if (cfg == null) {
+			throw new RuntimeException(
+					"Use ODBConnection.setCfg(new Config(url, porta, dbName, user, pass));");
+		}
 		Class.forName("org.postgresql.Driver");
 		db = open();
 	}
