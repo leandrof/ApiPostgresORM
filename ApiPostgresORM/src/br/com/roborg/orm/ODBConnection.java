@@ -23,6 +23,8 @@ public class ODBConnection {
 		}
 	}
 	
+	
+	/***/
 	private static Config cfg;
 	private Connection db;
 	
